@@ -1,0 +1,12 @@
+001.csv 
+	--Skor 0,46459
+	--Tarih: 1 Ekim
+	--carrier temizlendi
+
+002.csv 
+	--Skor 0,46513
+	--Tarih: 1 Ekim
+	--carrier temizlendi.
+	--brand temizlendi.
+
+	
