@@ -9,4 +9,11 @@
 	--carrier temizlendi.
 	--brand temizlendi.
 
-	
+003.csv
+	--Skor 0,44174
+	--Tarih 2 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--month atıldı
+	--fazla kullanıcılar drop edildi.
+	--totalseconds değişkeni oluşturuldu
