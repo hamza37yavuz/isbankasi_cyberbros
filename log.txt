@@ -31,3 +31,10 @@
 	--carrier temizlendi
 	--brand temizlendi
 	--totalseconds eklendi
+
+008.csv
+	--Skor 0,44284
+	--Tarih 2 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--carrier çıkarıldı
