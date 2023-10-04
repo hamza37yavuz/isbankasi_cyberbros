@@ -1,0 +1,36 @@
+Feature İmportance
+Menu 1 için
+    ETKİLİ feature 0,16,25,38,49
+    ETKİSİZ carrier 13 44 40
+
+Menu 2 için
+    ETKİLİ n_seconds12 feature 0,10,26,31
+    ETKİSİZ carrier 32 20
+
+Menu 3 için
+    ETKİLİ Month devicebrand feature 49
+    ETKİSİZ 5 20 22
+
+Menu 4 için
+    ETKİLİ n seconds1 Month feature 29 35
+    ETKİSİZ carrier device brand 48 46 42 18 2
+
+Menu 5 için
+    ETKİLİ feature 26 11 23
+    ETKİSİZ n seconds3 2 14 17 32
+
+Menu 6 için
+    ETKİLİ Month feature 29 19 23 16
+    ETKİSİZ 9 11 17 24 26 37 47
+
+Menu 7 için
+    ETKİLİ Month feature 49 22
+    ETKİSİZ 37 carrier
+
+Menu 8 için
+    ETKİLİ Month nseconds1 feature 10 31
+    ETKİSİZ carrier 20 22 24 28 44 45
+
+Menu 9 için
+    ETKİLİ nseconds1 feature 43 31 48 49
+    ETKİSİZ carrier
