@@ -26,15 +26,24 @@
 	--month atıldı
 
 007.csv
-	--Skor 0,44284
-	--Tarih 2 Ekim
+	--Skor 0,46423
+	--Tarih 4 Ekim
 	--carrier temizlendi
 	--brand temizlendi
 	--totalseconds eklendi
 
 008.csv
-	--Skor 0,44284
-	--Tarih 2 Ekim
+	--Skor 0,46435
+	--Tarih 4 Ekim
 	--carrier temizlendi
 	--brand temizlendi
 	--carrier çıkarıldı
+
+009.csv
+	--Skor 0,464453
+	--Tarih 4 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--carrier çıkarıldı
+	--group_Count eklendi
+
