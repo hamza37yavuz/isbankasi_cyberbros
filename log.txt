@@ -47,3 +47,24 @@
 	--carrier çıkarıldı
 	--group_Count eklendi
 
+011.csv
+	--Skor 0,46843
+	--Tarih 6 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	-- 0.05 , 500, 7, 35,
+
+012.csv
+	--Skor 0,4683
+	--Tarih 6 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	-- 0.05 , 700, 9, 40,
+
+013.csv
+	--Skor 0,47041
+	--Tarih 6 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	-- 0.05 , 500, 7, 35,
