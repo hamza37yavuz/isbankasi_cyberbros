@@ -11,7 +11,8 @@ sequential_palette = sns.color_palette('light:dodgerblue_r',9)
 alert_palette = sns.color_palette('Reds_r',9)
 paired_palette = sns.color_palette('Paired')
 
-
+trainpath = 'data\_train_final.parquet'
+testpath = 'data\_test_final.parquet'
 target = "TRANSPORTED"
 
 xgboost_params = {"learning_rate": [0.1],
