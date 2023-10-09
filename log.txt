@@ -68,3 +68,27 @@
 	--brand temizlendi
 	--aynı id ye sahip değişkenler şutlandı
 	-- 0.05 , 500, 7, 35,
+
+020.csv
+	--Skor 0,47041
+	--Tarih 9 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--is_ios degiskeni olusturuldu
+
+021.csv
+	--Skor 0,47120
+	--Tarih 9 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 7 outlier atıldı
+
+022.csv
+	--Skor 0,47059
+	--Tarih 9 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 ve n_seconds_2 deki outlierlar atıldı
