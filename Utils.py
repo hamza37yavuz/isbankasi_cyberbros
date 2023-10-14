@@ -133,8 +133,8 @@ def check_outlier(dataframe, col_name):
     else:
         return False
 
-def grab_outliers(dataframe, col_name, index=False):
-    low, up = outlier_thresholds(dataframe, col_name,q1=0.01,q3 = 0.99)
+def grab_outliers(dataframe, col_name, index=False,q1 = 0.01,q3 = 0.99):
+    low, up = outlier_thresholds(dataframe, col_name,q1=q1,q3 = q3)
 
     if dataframe[((dataframe[col_name] < low) | (dataframe[col_name] > up))].shape[0] > 10:
         print(dataframe[((dataframe[col_name] < low) | (dataframe[col_name] > up))].head())

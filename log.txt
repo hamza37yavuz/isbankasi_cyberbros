@@ -83,7 +83,7 @@
 	--carrier temizlendi
 	--brand temizlendi
 	--aynı id ye sahip değişkenler şutlandı
-	--nseconds_3 teki 7 outlier atıldı
+	--nseconds_3 teki 9 outlier atıldı
 
 022.csv
 	--Skor 0,47059
@@ -91,4 +91,141 @@
 	--carrier temizlendi
 	--brand temizlendi
 	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
 	--nseconds_3 ve n_seconds_2 deki outlierlar atıldı
+
+023.csv
+	--Skor 0,46885
+	--Tarih 10 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--nseconds_3 ve n_seconds_1 deki outlierlar atıldı
+
+024.csv
+	--Skor 0,46915
+	--Tarih 10 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--nseconds_3 ve n_seconds_2 deki outlierlar atıldı
+
+025.csv
+	--Skor 0,46843
+	--Tarih 10 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--nseconds_3 ve n_seconds_2 deki outlierlar atıldı
+
+026.csv
+	--Skor 0,47023
+	--Tarih 11 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--nseconds_3 teki 9 outlier atıldı
+	--aynı id ye sahip değişkenler şutlandı
+	--lof ile outlierlar atıldı
+
+027.csv
+	--Skor 0,46806
+	--Tarih 11 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--nseconds_3 teki 9 outlier atıldı
+	--aynı id ye sahip değişkenler şutlandı
+	--26,49,0 deki outlierlar atıldı
+
+028.csv
+	--Skor 0,46746
+	--Tarih 11 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--avg_nseconds oluşturuldu
+	--nseconds_3 teki 9 outlier atıldı
+
+029.csv
+	--Skor 0,47017
+	--Tarih 12 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--cat-n_seconds_1 oluşturuldu 4 kategori oluşturuldu
+
+030.csv
+	--Skor 0,46867
+	--Tarih 12 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 6 outlier atıldı
+
+031.csv
+	--Skor 0,46951
+	--Tarih 12 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--17 2 20 3 6 9 1 featurelerinin ortalaması alınd
+
+032.csv
+	--Skor 0,46963
+	--Tarih 13 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 15 outlier atıldı
+
+033.csv
+	--Skor 0,47138
+	--Tarih 13 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--nseconds_3 ve 2 nin ortalandan yeni değişken üretildi.
+
+034.csv
+	--Skor 0,46891
+	--Tarih 13 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--nseconds_3 ve 2 nin ortalamasından yeni değişken üretildi.
+	--avg0_16 değişkeni feature importance a göre oluşturuldu.
+
+035.csv
+	--Skor 0,47029
+	--Tarih 14 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--nseconds_3 ve 2 nin ortalandan yeni değişken üretildi.
+	--n_seconds1 ve 3 ün ortalaması bir değişken eklendi.
+
+036.csv
+	--Skor 0,46999
+	--Tarih 14 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--nseconds_1 ve 3 nin ortalamasından yeni değişken üretildi.
+
+037.csv
+	--Skor 0,46861
+	--Tarih 14 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--nseconds_1 ve 3 nin ortalamasından yeni değişken üretildi.
+	--nseconds_1 ve month çarpıldı.
