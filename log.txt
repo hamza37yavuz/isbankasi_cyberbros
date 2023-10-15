@@ -229,3 +229,12 @@
 	--nseconds_3 teki 9 outlier atıldı
 	--nseconds_1 ve 3 nin ortalamasından yeni değişken üretildi.
 	--nseconds_1 ve month çarpıldı.
+
+038.csv
+	--Skor 0,47138
+	--Tarih 15 Ekim
+	--carrier temizlendi
+	--brand temizlendi
+	--aynı id ye sahip değişkenler şutlandı
+	--nseconds_3 teki 9 outlier atıldı
+	--nseconds_1 ve 3 nin ortalamasından yeni değişken üretildi.
