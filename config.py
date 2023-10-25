@@ -15,6 +15,7 @@ trainpath = 'data\_train_final.parquet'
 testpath = 'data\_test_final.parquet'
 target = "target"
 
+"""
 xgboost_params = {"learning_rate": [0.1],
                   "max_depth": [4,5,6],
                   "n_estimators": [50,60,70],
@@ -33,7 +34,7 @@ classifiers = [('XGBoost', XGBClassifier(use_label_encoder=False, eval_metric='l
 
 
 
-"""
+
     knn_params = {"n_neighbors": range(2, 50)}
 
 cart_params = {'max_depth': range(1, 20),
