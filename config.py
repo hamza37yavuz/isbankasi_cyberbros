@@ -13,7 +13,7 @@ paired_palette = sns.color_palette('Paired')
 
 trainpath = 'data\_train_final.parquet'
 testpath = 'data\_test_final.parquet'
-target = "TRANSPORTED"
+target = "target"
 
 xgboost_params = {"learning_rate": [0.1],
                   "max_depth": [4,5,6],

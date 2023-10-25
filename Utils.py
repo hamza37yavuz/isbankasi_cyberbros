@@ -5,6 +5,7 @@ import seaborn as sns
 import config as cnf
 from itertools import combinations
 from sklearn.model_selection import GridSearchCV, cross_validate
+from sklearn.preprocessing import LabelBinarizer
 
 def check_df(dataframe, head=5,non_numeric=False):
     print("##################### Shape #####################")
@@ -125,6 +126,35 @@ def outlier_thresholds(dataframe, col_name, q1=0.05, q3=0.95):
     up_limit = quartile3 + 1.5 * interquantile_range
     low_limit = quartile1 - 1.5 * interquantile_range
     return low_limit, up_limit
+
+def do_Target_spareted(dataframe):
+    new_spareted_cabin = dataframe[cnf.target].str.split(pat = ",", expand = True)
+    
+    dataframe.drop(cnf.target, axis=1, inplace=True)
+    
+    new_spareted_cabin.rename(columns={0 : 'first_menu',
+                                       1 : 'second_menu',
+                                       2 : 'third_menu'}, inplace=True)
+    
+    return pd.concat([dataframe, new_spareted_cabin], axis=1)
+
+def sample_sub(ypred):
+    
+    sample = pd.read_csv("csv_sample.csv")
+
+    submission = pd.DataFrame({"id": sample["id"],
+                                cnf.target : ypred})
+                                
+    submission.to_csv("34.csv", index=False)
+
+def binarize_column(column):
+    lb = LabelBinarizer()
+    transformed_data = lb.fit_transform(column)
+    if column.name == "second_menu":
+        transformed_data = [np.insert(row, 4, 0) for row in transformed_data]
+    elif column.name == "third_menu":
+        transformed_data = [np.insert(row, 2, 0) for row in transformed_data]
+    return pd.Series([row.tolist() for row in transformed_data])
 
 def check_outlier(dataframe, col_name):
     low_limit, up_limit = outlier_thresholds(dataframe, col_name)
@@ -404,8 +434,9 @@ def hyperparameter_optimization(X, y, cv=3, scoring="roc_auc"):
         best_models[name] = final_model
     return best_models
 
-def cat_summary(dataframe, col_name, plot=False):
-    print(pd.DataFrame({col_name: dataframe[col_name].value_counts(),
+def cat_summary(dataframe, col_name, plot=False,info=True):
+    if info==True:
+        print(pd.DataFrame({col_name: dataframe[col_name].value_counts(),
                         "Ratio": 100 * dataframe[col_name].value_counts() / len(dataframe)}))
     print("##########################################")
     if plot:
