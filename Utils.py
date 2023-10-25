@@ -40,16 +40,6 @@ def check_df(dataframe, head=5,non_numeric=False):
     if non_numeric:
         print("##################### Quantiles #####################")
         print(dataframe.quantile([0, 0.05, 0.50, 0.95, 0.99, 1]).T)
-        
-def first_edit(dataframe):
-    dataframe.columns = [col.lower() for col in dataframe.columns]
-    dataframe.columns = dataframe.columns.str.replace(' ', '_')
-    dataframe.columns = dataframe.columns.str.replace('İ', 'I')
-    dataframe.columns = dataframe.columns.str.replace('Ğ', 'G')
-    dataframe.columns = dataframe.columns.str.replace('Ö', 'O')
-    dataframe.columns = dataframe.columns.str.replace('Ü', 'U')
-    dataframe.columns = dataframe.columns.str.replace('Ş', 'S')
-    dataframe.columns = dataframe.columns.str.replace('Ç', 'C')
     
 def missing_values_table(dataframe, na_name=False):
     na_columns = [col for col in dataframe.columns if dataframe[col].isnull().sum() > 0]
@@ -143,8 +133,7 @@ def sample_sub(ypred):
     sample = pd.read_csv("csv_sample.csv")
 
     submission = pd.DataFrame({"id": sample["id"],
-                                cnf.target : ypred})
-                                
+                                cnf.target : ypred})                        
     submission.to_csv("34.csv", index=False)
 
 def binarize_column(column):
@@ -266,145 +255,6 @@ def numcols_target_corr(dataframe, num_cols,target = cnf.target):
                        ).set_title(f'{item[0]}   &   {item[1]}')
         plt.grid(True)
         plt.show()            
-            
-def numeric_variables_boxplot(df, num_cols, target=None, alert=False):
-    
-    if alert == True:
-        palette = cnf.alert_palette
-    else:
-        palette = cnf.bright_palette
-        
-    if target == None:
-        
-        fig, [ax1,ax2,ax3,ax4] = plt.subplots(1,4, figsize=(7,3))
-
-        for col, ax, i in zip(num_cols, [ax1,ax2,ax3,ax4], range(4)):
-            sns.boxplot(df[col], 
-                        color=palette[i], 
-                        ax=ax
-                        ).set_title(col)
-            
-        for ax in [ax1,ax2,ax3,ax4]:
-            ax.set_xticklabels([])
-    else:
-        for col in num_cols:
-            plt.subplots(figsize=(7,3))
-            sns.boxplot(x=df[target], 
-                                y=df[col],
-                                hue=df[target],
-                                dodge=False, 
-                                fliersize=3,
-                                linewidth=0.7,
-                                palette=palette)
-            plt.title(col)
-            plt.xlabel('')
-            plt.ylabel('')
-            plt.xticks(rotation=45)
-            plt.legend('',frameon=False)
-
-    plt.tight_layout()
-    plt.show()
-    
-def plot_categorical_data(dataframe, x, hue, title='', label_angle=0):
-    """
-    Kategorik veri görselleştirmesi için alt grafikleri çizen bir fonksiyon. 
-    """
-    # Alt grafikleri yan yana düzenleme
-    fig, ax = plt.subplots(1, figsize=(8, 3))
-
-    # Grafik 1
-    sns.countplot(data=dataframe, x=x, hue=hue, ax=ax, palette='husl')
-    ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
-    ax.set_title(title)
-    ax.legend(prop={'size': 10})
-
-    # Grafikleri göster
-    plt.tight_layout()
-    plt.xticks(rotation=label_angle)
-    plt.show(block=True)
-    
-def sample_sub(ypred):
-  sample = pd.read_csv("sample_submission.csv")
-
-  submission = pd.DataFrame({"PassengerId": sample["PassengerId"],
-                             "Transported": ypred})
-  submission["Transported"] = submission["Transported"].astype(bool)                          
-  submission.to_csv("tekrar23.csv",index=False)
-  
-def plot_avg_numvars_by_target(dataframe, num_cols,agg='mean', round_ndigits=1, alert=False):
-    
-    if alert == True:
-        palette = cnf.alert_palette
-    else:
-        palette = cnf.sequential_palette
-        
-    for col in num_cols:
-        
-        if agg == 'max':
-            col_grouped = dataframe.groupby(cnf.target)[col].max().reset_index().sort_values(ascending=False,by=col)
-        elif agg == 'min':
-            col_grouped = dataframe.groupby(cnf.target)[col].min().reset_index().sort_values(ascending=True,by=col)
-        elif agg == 'sum':
-            col_grouped = dataframe.groupby(cnf.target)[col].sum().reset_index().sort_values(ascending=False,by=col)
-        elif agg == 'std':
-            col_grouped = dataframe.groupby(cnf.target)[col].std().reset_index().sort_values(ascending=False,by=col)
-        else:
-            col_grouped = dataframe.groupby(cnf.target)[col].mean().reset_index().sort_values(ascending=False,by=col)
-        
-        plt.subplots(figsize=(6,3))
-        ax = sns.barplot(x=col_grouped[cnf.target], 
-                     y=col_grouped[col], 
-                     width=0.8,
-                     palette=palette,
-                     errorbar=None)
-        ax.set_yticklabels([])  
-    
-        for p in ax.patches:
-            ax.text(p.get_x() + p.get_width() / 2., 
-                    p.get_height(), 
-                    round(p.get_height(),ndigits=round_ndigits), 
-                    fontsize=10, color='black', ha='center', va='top')
-            
-        plt.xlabel('')  
-        #plt.ylabel('')
-        plt.xticks(rotation=45)
-        plt.title(f'{agg} {col} - {cnf.target}')
-        plt.show()   
-        
-def plot_avg_numvars_by_catvars(dataframe, agg='mean', num_col='Age',cat_cols=[]):
-    
-    for col in cat_cols:
-        
-        if agg == 'max':
-            col_grouped = dataframe.groupby(col)[num_col].max().reset_index().sort_values(ascending=False,by=num_col)
-        elif agg == 'min':
-            col_grouped = dataframe.groupby(col)[num_col].min().reset_index().sort_values(ascending=True,by=num_col)
-        elif agg == 'sum':
-            col_grouped = dataframe.groupby(col)[num_col].sum().reset_index().sort_values(ascending=False,by=num_col)
-        elif agg == 'std':
-            col_grouped = dataframe.groupby(col)[num_col].std().reset_index().sort_values(ascending=False,by=num_col)
-        else:
-            col_grouped = dataframe.groupby(col)[num_col].mean().reset_index().sort_values(ascending=False,by=num_col)
-        
-        plt.subplots(figsize=(6,3))
-        ax = sns.barplot(x=col_grouped[col], 
-                     y=col_grouped[num_col], 
-                     width=0.8,
-                     palette=cnf.sequential_palette,
-                     errorbar=None)
-        ax.set_yticklabels([])  
-    
-        for p in ax.patches:
-            ax.text(p.get_x() + p.get_width() / 2., 
-                    p.get_height(), 
-                    round(p.get_height(),ndigits=1), 
-                    fontsize=10, color='black', ha='center', va='top')
-            
-        plt.xlabel('')  
-        #plt.ylabel('')
-        plt.xticks(rotation=45)
-        plt.title(f'{agg} {num_col} - {col}')
-        plt.show(block=True)        
         
 def correlation_matrix(df, cols):
     fig = plt.gcf()
@@ -413,26 +263,6 @@ def correlation_matrix(df, cols):
     plt.yticks(fontsize=10)
     fig = sns.heatmap(df[cols].corr(), annot=True, linewidths=0.5, annot_kws={'size': 12}, linecolor='w', cmap='RdBu')
     plt.show(block=True)
-
-def hyperparameter_optimization(X, y, cv=3, scoring="roc_auc"):
-    """
-    Grid search ile daha önce belirlenen parametreler ile hiperparametre optimizasyonu yapılıyor.
-    """
-    print("Hyperparameter Optimization....")
-    best_models = {}
-    for name, classifier, params in cnf.classifiers:
-        print(f"########## {name} ##########")
-        cv_results = cross_validate(classifier, X, y, cv=cv, scoring=scoring)
-        print(f"{scoring} (Before): {round(cv_results['test_score'].mean(), 4)}")
-
-        gs_best = GridSearchCV(classifier, params, cv=cv, n_jobs=-1, verbose=False).fit(X, y)
-        final_model = classifier.set_params(**gs_best.best_params_)
-
-        cv_results = cross_validate(final_model, X, y, cv=cv, scoring=scoring)
-        print(f"{scoring} (After): {round(cv_results['test_score'].mean(), 4)}")
-        print(f"{name} best params: {gs_best.best_params_}", end="\n\n")
-        best_models[name] = final_model
-    return best_models
 
 def cat_summary(dataframe, col_name, plot=False,info=True):
     if info==True:
